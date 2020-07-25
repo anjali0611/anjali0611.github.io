@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>TIK-TAK-TOE</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link href="https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="animations/paper-full.js"></script>
+	<!-- <script type="text/javascript" src="tic-tak-toe.js"></script> -->
+	    <script type="text/paperscript" canvas="canvas">
+        var amount = 45;
+        for (var i = 0; i < amount; i++) {
+            var path = new Path({
+                fillColor: {
+                    hue: 1,
+                    saturation: 1,
+                    brightness: Math.random()
+                },
+                closed: true
+            });
+        }
+
+        var position = view.center;
+        var mousePos = view.center;
+        var children = project.activeLayer.children;
+
+        function iterate(count) {
+            var delta = mousePos - position;
+            position += delta / 10;
+            for (var i = 1; i < amount; i++) {
+                var path = children[i];
+                var length = Math.abs(Math.sin(i + count / 40) * 300);
+                path.segments = [
+                    position + delta / 2,
+                    position + { angle: i / amount * 360, length: length },
+                    position + { angle: (i + 1) / amount * 360, length: length }
+                ];
+                path.fillColor.hue = count - length;
+            }
+        }
+
+        function onFrame(event) {
+            iterate(event.count);
+        }
+
+        function onMouseMove(event) {
+            iterate();
+            mousePos = event.point;
+        }
+    </script>
+
+</head>
+
+<body>
+	
+	<div class="side">
+
+	<div class="container">
+		
+		<div class="table">
+
+			<h1 id="hi">Tic Tac Toe</h1>
+			
+		</div>
+	</div>
+		<div class="canvas">
+			<canvas id="canvas" resize></canvas>
+		</div>	
+	
+	<div id="allthethings" >
+		
+		
+			<div id="left"></div>
+		
+		<div id="single">
+			<p class="player_type">SINGLE PLAYER</p>
+		</div>
+		<div id="multiplayer">
+			<p class="player_type">MULTIPLAYER</p>
+		</div>
+		<div id="options">
+			<p>INSTRUCTIONS</p>
+		</div>
+
+		<div id="credits">
+			<p>ABOUT</p>
+		</div>
+		<div id="right"></div>
+
+		<div id="exit" class=""></div>
+		<div id="circle" class=""></div>	
+		
+		
+	</div>
+	<div class="hidude" >
+		Instructionsbr	<br>
+You can play tic-tac-toe in two modes :<br>
+1.Single player – Buckle up and compete with our AI on three different difficulty levels.
+We challenge you to beat our ULTIMATE AI. <br>
+2.Multi-player – Take turns playing the game with your friend and find out who wins !
+<br>
+(A VERY VERY SECRET TIP- WHILE PLAYING THE GAME TRY PRESSING ANY LETTER ON YOUR KEYBOARD FROM A-Z )
+		<div><button class="back">Back</button></div>
+		
+	</div>
+	<div class="hicredits" >
+		Microsoft Engage 2020 – Mars colonisation program. <br>
+This program was designed to bridge the gap between theoretical concepts and practical skills of development. A project like this has pushed us to learn and try new things which led us to grow our skillset. We would like to thank Microsoft and Acehacker for giving us this wonderful opportunity and providing a platform to showcase our knowledge. We are highly obliged in taking this opportunity to thank our mentor Mr. Aman Gill for his valuable time and guidance. <br>
+We have really enjoyed being a part of this program, attending webinars and AMA sessions, doing assignments etc.  We have tried our best to implement the AI principles. We hope you find this game entertaining.  
+		<div><button class="backnew">Back</button></div>
+		
+	</div>
+	<div class="avatar_container hide">
+		<div class="head">
+			<h1>Choose your Avatar</h1>
+		</div>
+		<div class="human">
+			<div class="boy">
+				<h1 class="text">BOY</h1>
+				<img id="boy"  data-gen="boy" class="avatar" src="images/boy.jpg" alt="boy">
+			</div>
+			<div class="girl">
+				<h1 class="text">GIRL</h1>
+				<img id="girl"  data-gen='girl' class="avatar" src="images/girl.jpg" alt="girl">
+			</div>
+		</div>
+		
+			<div class="input hide">
+				<input type="text" placeholder="Enter Your Name" required minlength="3">
+			</div>
+			<div class="Sbutton hide">
+				
+					<button >START GAME</button>
+				
+			</div>	
+	</div>
+
+	<div class="multiplayer hide">
+		<div class="head">
+			<h1>Choose your Avatar</h1>
+		</div>
+		<div id="player1">
+			
+			<div class="boy">
+				<h2 class="text">BOY</h2>
+				<img id="p1boy"  data-gen="boy" class="avatar" src="images/boy.jpg" alt="boy">
+			</div>
+			<div class="girl">
+				<h2 class="text">GIRL</h2>
+				<img id="p1girl"  data-gen='girl' class="avatar" src="images/girl.jpg" alt="girl">
+			</div>
+			<label>Player1</label>
+			<div class="input hide">
+				
+				<input type="text" placeholder="Enter Your Name" required minlength="3">
+			</div>
+		</div>
+
+		<div id="player2">
+			<div class="Mbutton hide">
+
+				<button>START GAME</button>
+			</div>
+			<label>Player2</label>
+			<div class="input hide">
+				
+				<input type="text" placeholder="Enter Your Name" required minlength="3">
+			</div>
+			<div class="boy">
+				<h2 class="text">BOY</h2>
+				<img id="p2boy"  data-gen="boy" class="avatar" src="images/boy.jpg" alt="boy">
+			</div>
+			<div class="girl">
+				<h2 class="text">GIRL</h2>
+				<img id="p2girl"  data-gen='girl' class="avatar" src="images/girl.jpg" alt="girl">
+			</div>
+
+			
+		</div>
+			
+	</div>
+	</div>
+	<script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>

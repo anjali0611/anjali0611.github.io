@@ -1,0 +1,429 @@
+body,html
+{
+	height: 100%;
+	width: 100%;
+}
+body {
+	background-image: url('background_.jpg');
+	background-size: cover;
+	margin:0 0 0 0;
+}
+a {
+	text-decoration: none;
+}
+
+label
+{
+	height: 40px;
+	width: 150px;
+	line-height: 40px;
+	text-align: center;
+	border: none;
+	border: 3px solid rgba(150,200,150,0.4);
+	font-size: 25px;
+	background: #52d29d;
+	margin-right: 30px;
+}
+
+.boyy
+{
+	/*border: 3px solid green;*/
+	background: green;
+}
+
+.girll
+{
+	
+	/*border: 3px solid green;*/
+	background: green;
+
+}
+
+.table h1 {
+	text-shadow: 0px 3px #ff0000;
+	text-align: center;
+	font-size: 65px;
+	font-family: cursive;
+	color: #f00;
+	margin: 0px 0px 0px 0px;
+}
+
+#exit {
+	height: 30px;
+	width: 30px;
+	background: #006680;
+	border: 1px solid black;
+	border-radius: 50px;
+	position: Absolute;
+	top: -30px;
+	z-index: 50;
+	right: -15px;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	cursor: pointer;
+}
+#exit:after {
+	content: '';
+	display: block;
+	height: 15px;
+	width: 15px;
+	background: transparent;
+	border-radius: 50px;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+
+	border: 3px solid orange;
+	border-top-color: transparent;
+}
+
+#exit:before {
+	content: '';
+	display: block;
+	height: 10px;
+	width: 3px;
+	background: orange;
+	z-index: 70;
+	position: Absolute;
+	right: 13px;
+	top: 6px;
+}
+#circle {
+	height: 40px;
+	width: 40px;
+	background: transparent;
+	border: 1px solid white;
+	border-radius: 50px;
+	position: absolute;
+	top: -35px;
+	z-index: 40;
+	right: -20px;
+}
+
+#exit:hover {
+	background: #7a0000;
+}
+
+#allthethings {
+	width: 0px;
+	height: 0px;
+
+	border-left: 300px solid transparent;
+	border-right: 300px solid transparent;
+	border-top: 300px solid transparent;
+	border-radius: px;
+	position: relative;
+	margin: auto;
+	top: 5px;
+	left: 2px;
+}
+
+#single {
+	position: relative;
+	bottom: 330px;
+	right: 300px;
+	height: 50px;
+	width: 600px;
+	background: #006680;
+	text-align: center;
+	font-size: 30px;
+	background-size: 1px 300%;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	color: orange;
+	font-family: shadows into light;
+
+	cursor: pointer;
+}
+
+#single:hover {
+	background: #7a0000;
+	color: white;
+	-webkit-transform: rotate(-1deg);
+	transform: rotate(-2deg);
+}
+
+#multiplayer:hover {
+	background: #7a0000;
+	color: white;
+
+	-webkit-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+}
+
+#credits:hover {
+	background: #7a0000;
+	color: white;
+	-webkit-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+}
+
+#options:hover {
+	background: #7a0000;
+	color: white;
+	-webkit-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+}
+
+#single p {
+	position: relative;
+	top: 2px;
+	right: 4px;
+}
+
+#multiplayer {
+	height: 50px;
+	width: 500px;
+	background: #006680;
+	position: relative;
+	bottom: 345px;
+	right: 240px;
+	text-align: center;
+	font-size: 30px;
+	font-family: shadows into light;
+	color: orange;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	cursor: pointer;
+}
+#multiplayer p {
+	position: relative;
+	top: 0px;
+	right: 9px;
+}
+
+#options {
+	height: 50px;
+	width: 400px;
+	background: #006680;
+	position: relative;
+	bottom: 360px;
+	right: 200px;
+	font-size: 30px;
+	text-align: center;
+	font-family: shadows into light;
+	color: orange;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+#options p {
+	position: relative;
+	top: 0px;
+	right: 4px;
+}
+
+#credits {
+	height: 50px;
+	width: 300px;
+	position: relative;
+	background: #006680;
+	bottom: 375px;
+	font-size: 30px;
+	right: 150px;
+	text-align: center;
+	font-family: shadows into light;
+	color: orange;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+#credits p {
+	position: relative;
+	top: 0px;
+}
+
+.avatar_container {
+	
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+  	width: 50%;
+  	/*border: 3px solid green;*/
+ 
+}
+.avatar {
+	margin: 0 10px;
+}
+
+.hide {
+	display: none;
+}
+.avatar_container .human
+{
+	display: flex;
+	margin: auto;
+	width: 70%;
+}
+.text
+{
+	margin:0px;
+}
+.head
+{
+	text-align: center;
+	font-size: 35px;
+	font-family: cursive;
+	color: #f00;
+	/*margin-bottom: 1px;*/
+}
+.head h1
+{
+	margin:0;
+}
+.boy,.girl
+{
+
+	text-align: center;
+	font-size: 15px;
+	font-family: cursive;
+	color: #f00;
+	margin-bottom: 30px;
+	cursor: pointer;
+
+}
+img
+{
+	border: 1px solid #ddd;
+  	border-radius: 4px;
+  	padding: 5px;
+}
+img:hover
+{
+	border: 3px solid steelblue;
+}
+
+.avatar_container input
+{
+	/*margin-left: 507px;*/
+	height: 40px;
+	width: 488px;
+	line-height: 40px;
+	text-align: center;
+	border: none;
+	border: 3px solid rgba(150,200,150,0.4);
+	font-size: 25px;
+	color:#2980b9;
+	margin-left: 120px;
+	margin-bottom: 50px;
+	text-transform: uppercase;
+	
+}
+input:focus{
+	background-color: white;
+	border: 3px solid #2980b9;
+	outline: none;
+}
+input:hover
+{
+	border: 3px solid #2980b9;
+}
+.avatar_container button
+{
+	margin-left: 255px;
+	height: 40px;
+	width: 30%;
+	border: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: white;
+	letter-spacing: 1px;
+	font-size: inherit;
+	transition: all 0.5s;
+	outline: none;
+	background: steelblue;
+	cursor: pointer;
+}
+button:hover
+{
+	background: white;
+	color: steelblue;
+	border:2px solid steelblue;
+}
+
+.multiplayer button
+{
+	/*margin-left: 255px;*/
+	height: 40px;
+	/*width: 40%;*/
+	border: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: white;
+	letter-spacing: 1px;
+	font-size: inherit;
+	transition: all 0.5s;
+	outline: none;
+	background: steelblue;
+	cursor: pointer;
+	margin-right:90px; 
+}
+
+#player1
+{	
+	
+	align-items: center;
+	display: flex;
+	/*width:50%;*/	
+	/*margin: 0px;*/
+}
+
+#player2
+{
+	
+	align-items: center;
+	display: flex;
+	
+	/*margin: 0px;*/
+	float: right;
+}
+.multiplayer
+{
+	width: 100%;
+}
+.multiplayer .head
+{
+	font-size: 13px;
+}
+.multiplayer #player1 input
+{
+	height: 40px;
+	width: 300px;
+	line-height: 40px;
+	text-align: center;
+	border: none;
+	border: 3px solid rgba(150,200,150,0.4);
+	font-size: 25px;
+	color:#2980b9;
+	text-transform: uppercase;
+	float: right;
+	margin-right: 60px;
+}
+
+.multiplayer #player2 input
+{
+	height: 40px;
+	width: 300px;
+	line-height: 40px;
+	text-align: center;
+	border: none;
+	border: 3px solid rgba(150,200,150,0.4);
+	font-size: 25px;
+	color:#2980b9;
+	text-transform: uppercase;
+	float: left;
+}
+.multiplayer input:focus{
+	background-color: white;
+	border: 3px solid #2980b9;
+	outline: none;
+}
+.multiplayer input:hover
+{
+	border: 3px solid #2980b9;
+}
+
+
+

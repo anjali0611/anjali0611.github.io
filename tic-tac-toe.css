@@ -1,0 +1,326 @@
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+   }
+  h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+  body {
+  margin: 0; }
+  img {
+  border-style: none; }
+  button
+  {
+    font-size: 20px;
+  }
+
+body {
+  background-color: #eaeaea;
+  position: relative;
+  font-family: 'Just Me Again Down Here', cursive;
+  font-size: 30px; }
+  body:before {
+    content:'';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.04; }
+    li
+    {
+      font-size: 30px;
+    }
+
+* {
+  box-sizing: border-box; }
+  canvas
+    {
+        height: 100%;
+        width: 50%;
+        margin-left: 0; 
+        color: red;
+    }
+
+
+body, html {
+  height: 100%; 
+  margin:0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle; }
+.a-z
+{
+  background: rgba(150,150,150,0.6);
+  top: 100px;
+  left: 50%;
+  width: 400px;
+  margin-left: 500px;
+  text-align: center;
+  color: white;
+  margin-top: 0px;
+}
+.ifyoucan
+{
+  background: rgba(150,150,150,0.6);
+  top: 100px;
+  left: 50%;
+  width: 400px;
+  margin-left: 500px;
+  margin-top: 400px;
+  text-align: center;
+  color: white;
+  /*margin-top: 0px;*/
+}
+  
+
+#container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px; }
+  #container #sidebar_wrap {
+    width: 35%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.85); }
+  #container #board_wrap {
+    width: 65%;
+    height:100%;
+    background-color:#131313;
+    background-size: 300px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
+#newgame {
+  background-color: #52d29d;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 2px;
+  color: #ffffff;
+  font-family: 'Gloria Hallelujah', cursive;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 10px; }
+
+  .playagain
+  {
+  background-color: rgba(120,180,250,0.8);
+  border: none;
+  padding: 13px 26px;
+  border-radius: 2px;
+  color: #ffffff;
+  font-family: 'Gloria Hallelujah', cursive;
+  cursor: pointer;
+  font-weight: 600;
+  /*width: 100%;*/
+  margin-top: 10px;
+  }
+
+#sidebar #charachters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative; }
+
+#sidebar .field {
+  margin-bottom: 30px; }
+
+  #sidebar .field ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #8c8c8c;
+    border-radius: 2px;
+    overflow: hidden;
+    font-size: 15px; }
+    #sidebar .field ul li {
+      float: left;
+      padding: 10px 15px;
+      border-right: 1px solid #8c8c8c;
+      cursor: pointer;
+      color: #8c8c8c; }
+      #sidebar .field ul li:hover {
+        background-color: #b7b7b7;
+        color: #fff; }
+      #sidebar .field ul li.active {
+        background-color: #8c8c8c;
+        color: #fff; }
+      #sidebar .field ul li:last-child {
+        border-right: none; }
+  #sidebar .field .starting_player_choices ul li {
+    width: 50%;
+    text-align: center; }
+  #sidebar .field label {
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block; }
+
+.active
+{
+  background-color: #8c8c8c;
+        color: #fff;
+}
+
+#board {
+  width: 460px;
+  height: 460px;
+  float: left;
+  position: relative; }
+  #board:after {
+    content: '';
+    position: absolute;
+    background-color: #52d29d;
+    transition: 0.7s; }
+  #board[class^="H"]:after {
+    width: 0%;
+    height: 5px;
+    left: 0;
+    transform: translateY(-50%); }
+  #board[class^="H"].full:after {
+    width: 100%; }
+  #board.H1:after {
+    top: 16.6666666665%; }
+  #board.H2:after {
+    top: 50%; }
+  #board.H3:after {
+    top: 83.33333333%; }
+  #board[class^="V"]:after {
+    width: 5px;
+    height: 0%;
+    top: 0;
+    transform: translateX(-50%); }
+  #board[class^="V"].full:after {
+    height: 100%; }
+  #board.V1:after {
+    left: 16.6666666665%; }
+  #board.V2:after {
+    left: 50%; }
+  #board.V3:after {
+    left: 83.33333333%; }
+  #board.D1:after {
+    height: 0%;
+    width: 5px;
+    left: 0;
+    top: 0;
+    transform: rotateZ(-45deg);
+    transform-origin: 50% 0;
+    transition: height 0.7s; }
+  #board.D1.full:after {
+    height: 140%; }
+  #board.D2:after {
+    height: 0%;
+    width: 5px;
+    right: 0;
+    top: 0;
+    transform: rotateZ(45deg);
+    transform-origin: 50% 0;
+    transition: height 0.7s; }
+  #board.D2.full:after {
+    height: 140%; }
+  #board [class^="cell-"] {
+    height: 33.3333333%;
+    width: 33.3333333%;
+    float: left;
+    border: 1px solid #fafafa;
+    position: relative;
+     }
+    
+
+  #board .cell-0, #board .cell-1, #board .cell-2 {
+    border-top: none; }
+  #board .cell-2, #board .cell-5, #board .cell-8 {
+    border-right: none; }
+  #board .cell-0, #board .cell-3, #board .cell-6 {
+    border-left: none; }
+  #board .cell-6, #board .cell-7, #board .cell-8 {
+    border-bottom: none; }
+
+    /*#board_wrap
+    {
+      display: block;
+    }*/
+    .big
+    {
+      height: 250px;
+      width: 250px;
+      transition: width 2s,height 2s;
+    }
+
+    .hide
+    {
+      display: none;
+    }
+
+    .new
+    {
+      height: 155px;
+      width: 155px;
+    }
+    .curser
+    {
+      cursor: pointer;
+    }
+    
+    #board p
+    {
+      color: white;
+      text-transform: uppercase;
+      text-align:center;
+    }
+    .boxes{
+        color:white; 
+        text-align: center;
+        vertical-align: center;
+        font-size: 120px;
+        font-weight: 900;
+        cursor: pointer;
+        font-family: cursive;
+      }
+    #message
+    {
+      /*display: none;*/
+      color: white;
+      text-align: center;
+    }
+    #draw
+    {
+      /*display: none;*/
+      color: white;
+      text-align: center;
+    }
+    .notallowed
+    {
+      cursor: not-allowed;
+    }
+    .endgame
+    {
+      display: none;
+      width: 300px;
+      top: 150px;
+      background-color: rgba(150,150,150,0.8);
+      position: absolute;
+      left: 50%;
+      margin-left: -149px;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      text-align: center;
+      border-radius: 5px;
+      color: white;
+      font-size: 2em;
+     
+    }
+    .text
+    {
+      font-size: 60px;
+    }

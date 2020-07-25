@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic Tac Toe </title>
+	<script type="text/javascript" src="animations/paper-full.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.28/howler.js"></script>
+	<link rel="stylesheet" type="text/css" href="tic-tac-toe.css">
+	<script type="text/paperscript" canvas="canvas">
+
+		var keyData={
+		a:{
+			color:"red",
+			sound: new Howl({
+			urls:['sounds/a.mp3']
+			})
+		},
+		b:{
+			color:"white",
+			sound: new Howl({
+			urls:['sounds/b.mp3']
+			})
+		},
+		c:{
+			color:"blue",
+			sound: new Howl({
+			urls:['sounds/c.mp3']
+			})
+		},
+		d:{
+			color:"green",
+			sound: new Howl({
+			urls:['sounds/d.mp3']
+			})
+		},
+		e:{
+			color:"yellow",
+			sound: new Howl({
+			urls:['sounds/e.mp3']
+			})
+		},
+		f:{
+			color:"grey",
+			sound: new Howl({
+			urls:['sounds/f.mp3']
+			})
+		},
+		g:{
+			color:"steelblue",
+			sound: new Howl({
+			urls:['sounds/g.mp3']
+			})
+		},
+		h:{
+			color:"maroon",
+			sound: new Howl({
+			urls:['sounds/h.mp3']
+			})
+		},
+		i:{
+			color:"Turquoise",
+			sound: new Howl({
+			urls:['sounds/i.mp3']
+			})
+		},
+		j:{
+			color:"	#CCCCFF",
+			sound: new Howl({
+			urls:['sounds/j.mp3']
+			})
+		},
+		k:{
+			color:"#CC8899",
+			sound: new Howl({
+			urls:['sounds/k.mp3']
+			})
+		},
+		l:{
+			color:"	#92000A",
+			sound: new Howl({
+			urls:['sounds/l.mp3']
+			})
+		},
+		m:{
+			color:"teal",
+			sound: new Howl({
+			urls:['sounds/m.mp3']
+			})
+		},
+		n:{
+			color:"lime",
+			sound: new Howl({
+			urls:['sounds/n.mp3']
+			})
+		},
+		o:{
+			color:"	#FFBF00",
+			sound: new Howl({
+			urls:['sounds/o.mp3']
+			})
+		},
+		p:{
+			color:"#9966CC",
+			sound: new Howl({
+			urls:['sounds/p.mp3']
+			})
+		},
+		q:{
+			color:"#FBCEB1",
+			sound: new Howl({
+			urls:['sounds/q.mp3']
+			})
+		},
+		r:{
+			color:"#0095B6",
+			sound: new Howl({
+			urls:['sounds/r.mp3']
+			})
+		},
+		s:{
+			color:"#CD7F32",
+			sound: new Howl({
+			urls:['sounds/s.mp3']
+			})
+		},
+		t:{
+			color:"#E0B0FF",
+			sound: new Howl({
+			urls:['sounds/t.mp3']
+			})
+		},
+		u:{
+			color:"red",
+			sound: new Howl({
+			urls:['sounds/u.mp3']
+			})
+		},
+		v:{
+			color:"	#FF6600",
+			sound: new Howl({
+			urls:['sounds/v.mp3']
+			})
+		},
+		w:{
+			color:"#DA70D6",
+			sound: new Howl({
+			urls:['sounds/w.mp3']
+			})
+		},
+		x:{
+			color:"	#7DF9FF",
+			sound: new Howl({
+			urls:['sounds/x.mp3']
+			})
+		},
+		y:{
+			color:"#BFFF00",
+			sound: new Howl({
+			urls:['sounds/y.mp3']
+			})
+		},
+		z:{
+			color:"	#800000",
+			sound: new Howl({
+			urls:['sounds/z.mp3']
+			})
+		}
+
+
+
+		}
+
+		var circle =[];
+		function onKeyDown(event)
+		{
+		if(keyData[event.key])
+		{
+			var maxPoint = new Point(view.size.width,view.size.height);
+			var randomPoint = Point.random();
+			var points = maxPoint*randomPoint;
+			var newcircle = new Path.Circle(points,150)
+			newcircle.fillColor=keyData[event.key].color;
+			keyData[event.key].sound.play();
+			circle.push(newcircle);
+		}
+
+
+		}
+		function onFrame(event) 
+		{
+			for(var i=0;i<circle.length;i++){
+			circle[i].fillColor.hue += 1;
+			circle[i].scale(0.99);
+			}
+		}
+
+
+</script>
+</head>
+<body>
+	<div id="container">
+
+		<div id="sidebar_wrap">
+			<div id="sidebar">
+				<div id="charachters">
+					<div class="human">
+						<img class="Sboy Sgirl active" src="">
+					</div>
+					<div class="vs">vs</div>
+					<div class="robot Mboy">
+						<img class="Srobot" src="">
+					</div>
+				</div>
+				<div class="field hide">
+					<label>Depth</label>
+					<div class="depth_choices " id="depth">
+						<ul>
+							<li data-value="1" class="blind">Blind AI</li>
+							<li data-value="2" class="easy">Semi AI</li>
+							<li data-value="-1" class="active">Ultimate AI</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="field">
+					<label>Starting Player</label>
+					<div class="starting_player_choices" id="starting_player">
+						<ul id="ul">
+							<li data-value="0" class="human1 active">Human</li>
+							<li data-value="1" class="human2">Computer</li>
+						</ul>
+					</div>
+				</div>
+
+				<button id="newgame">New Game</button>
+				
+			</div>
+
+		</div>
+		
+		<div id="board_wrap">
+
+			<div id="board">
+				<div class="a-z">Press any key A-Z</div>
+				<p id="pop">Player <span id="player">X</span> your turn</p>
+				<p class="hide gameover">Game Over!</p>
+				<div id="0" class="cell-0 boxes"></div>
+				<div id="1" class="cell-1 boxes"></div>
+				<div id="2" class="cell-2 boxes"></div>
+				<div id="3" class="cell-3 boxes"></div>
+				<div id="4" class="cell-4 boxes"></div>
+				<div id="5" class="cell-5 boxes"></div>
+				<div id="6" class="cell-6 boxes"></div>
+				<div id="7" class="cell-7 boxes"></div>
+				<div id="8" class="cell-8 boxes"></div>
+				<h2 id="message" class="hide">Player <span id="winner"></span> Wins</h2>
+				<h2 id="draw" class="hide">Game draw! play again!! </h2>
+				<div class="endgame">
+					<div class="text"></div>
+					<button class="playagain">Play again!</button>
+
+				</div>
+				<div class="ifyoucan">Fill the screen IF YOU CAN</div>
+        		
+			</div>
+
+			<canvas id="canvas" resize></canvas>
+		</div>
+		<!-- <div class="a-z">Press any key A-Z</div> -->
+		<!-- <canvas id="canvas" resize></canvas> -->
+	</div>
+
+	<script type="text/javascript" src="tic-tac-toe.js"></script>
+	
+</body>
+</html>

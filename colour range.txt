@@ -1,0 +1,13 @@
+ORANGE_MIN = np.array([5, 50, 50],np.uint8)
+ORANGE_MAX = np.array([15, 255, 255],np.uint8)
+
+For RED, you can choose the HSV range (0,50,20) ~ (5,255,255) and (175,50,20)~(180,255,255)
+
+
+Offline installer is saved in: C:\Users\Public\Documents\Wondershare\
+
+low_red = np.array([161, 155, 84])
+    high_red = np.array([179, 255, 255])
+
+low_blue = np.array([94, 80, 2])
+    high_blue = np.array([126, 255, 255])
